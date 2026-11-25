@@ -198,3 +198,203 @@
               <br/>
 <span style="color:#c5838c">
                 hechos helado.
+                              </span>
+</h2>
+<p class="section-sub">
+              Prueba nuestro lado más tradicional: api, arroz con leche y papaliza. Descubre también açaí, chantillí y otros sabores. Los precios y sabores son referenciales y deben confirmarse al realizar el pedido.
+            </p>
+</div>
+<div aria-label="Filtrar catálogo" class="filters" role="group">
+<button aria-pressed="true" class="filter active" data-filter="todos">
+              Todos
+            </button>
+<button aria-pressed="false" class="filter" data-filter="cremosos">
+              Cremosos
+            </button>
+<button aria-pressed="false" class="filter" data-filter="frutales">
+              Frutales
+            </button>
+<button aria-pressed="false" class="filter" data-filter="especiales">
+              Especiales
+            </button>
+</div>
+<div class="catalog-controls">
+<p aria-live="polite" id="resultCount">
+              9 sabores disponibles
+            </p>
+<label class="search-box">
+              ⌕
+              <input aria-label="Buscar sabor" id="searchInput" placeholder="Busca tu sabor favorito" type="search"/>
+</label>
+</div>
+<div class="products" id="products">
+</div>
+</div>
+</section>
+<!-- ===== MAIN · Nuestra historia ===== -->
+<section class="about-section" id="nosotros">
+<div class="container about-grid">
+<div class="about-visual">
+<img alt="Helados artesanales de varios sabores" loading="lazy" src="assets/imagenes/nosotros.jpg"/>
+<div class="about-stamp">
+<span>
+                ♥
+              </span>
+              Hecho
+              <br/>
+              con cariño
+            </div>
+</div>
+<div class="about-copy">
+<h2 class="section-title">
+              Helados con historia.
+              <br/>
+<span style="color:#c5838c">
+                Sabores con raíces.
+              </span>
+</h2>
+<p class="section-sub">
+              Chiri es una propuesta de heladería artesanal que da un giro refrescante a sabores conocidos y queridos de nuestra cultura.
+            </p>
+<p>
+              Aquí el api, el arroz con leche y la papaliza se convierten en helados fuera de lo común. También exploramos sabores como el açaí (asaí) y la chantillí para quienes quieren probar algo nuevo. Nuestra idea es sencilla: disfrutar lo tradicional de una forma diferente.
+            </p>
+<div class="about-highlights">
+<div class="highlight">
+<strong>
+                  Chiri
+                </strong>
+<small>
+                  Tradición con un toque nuevo
+                </small>
+</div>
+<div class="divider-v">
+</div>
+<div class="highlight">
+<strong>
+                  5
+                </strong>
+<small>
+                  Sabores protagonistas
+                </small>
+</div>
+</div>
+<a class="btn btn-dark" href="#catalogo">
+              Descubre los sabores de Chiri ↗
+            </a>
+</div>
+</div>
+</section>
+<!-- Opiniones: sin testimonios inventados; comentarios locales de demostración. -->
+<!-- ===== MAIN · Comentarios ===== -->
+<section aria-labelledby="commentsTitle" class="comments-section" id="comentarios">
+<div class="container">
+<div class="comments-head">
+<div>
+<h2 class="section-title" id="commentsTitle">
+                Cada sabor tiene
+                <br/>
+<span class="comments-pink">
+                  una historia.
+                </span>
+</h2>
+<p class="section-sub">
+                ¿Ya probaste nuestros helados? Cuéntanos qué te pareció, qué sabor fue tu favorito o cuál te gustaría descubrir.
+              </p>
+</div>
+<div aria-hidden="true" class="comments-decoration">
+<span>
+                “
+              </span>
+<strong>
+                ¡Nos encanta
+                <br/>
+                leerte!
+              </strong>
+<small>
+                Chiri · Heladería artesanal
+              </small>
+</div>
+</div>
+<div class="comments-layout">
+<div class="comments-board">
+<div class="comments-board-header">
+<div>
+<h3>
+                    Lo que nos cuentan
+                  </h3>
+</div>
+<span class="comments-counter" id="commentsCount">
+                  0 comentarios
+                </span>
+</div>
+<div aria-live="polite" class="comments-list" id="commentsList">
+<div class="comments-empty">
+<strong>
+                    Este espacio es para ti
+                  </strong>
+<p>
+                    Sé la primera persona en compartir su experiencia con Chiri.
+                  </p>
+</div>
+</div>
+</div>
+<form class="comments-form" id="commentsForm">
+<h3>
+                Déjanos tu comentario
+                <span aria-hidden="true">
+                  💗
+                </span>
+</h3>
+<p>
+                Queremos conocer tu opinión.
+              </p>
+<div class="field">
+<label for="reviewName">
+                  Tu nombre
+                </label>
+<input autocomplete="name" id="reviewName" maxlength="50" name="nombre" placeholder="¿Cómo te llamas?" required="" type="text"/>
+</div>
+<div class="field">
+<label for="reviewRating">
+                  ¿Cuánto te gustó Chiri?
+                </label>
+<select id="reviewRating" name="valoracion" required="">
+<option value="5">
+                    ★★★★★ · Me encantó
+                  </option>
+<option value="4">
+                    ★★★★☆ · Muy bueno
+                  </option>
+<option value="3">
+                    ★★★☆☆ · Bueno
+                  </option>
+<option value="2">
+                    ★★☆☆☆ · Puede mejorar
+                  </option>
+<option value="1">
+                    ★☆☆☆☆ · No fue lo esperado
+                  </option>
+</select>
+</div>
+<div class="field">
+<label for="reviewMessage">
+                  Tu comentario
+                </label>
+<textarea id="reviewMessage" maxlength="450" name="comentario" placeholder="Mi sabor favorito fue…" required="" rows="5"></textarea>
+</div>
+<button class="btn btn-dark comments-submit" type="submit">
+                Publicar mi comentario ↗
+              </button>
+<p class="comments-notice">
+<span aria-hidden="true">
+                  ⓘ
+                </span>
+                Por ahora, los comentarios se guardan solo en este navegador. No serán visibles para otros clientes hasta conectar una base de datos.
+              </p>
+<p aria-live="polite" class="comments-feedback" id="commentsFeedback" role="status">
+</p>
+</form>
+</div>
+</div>
+</section>
