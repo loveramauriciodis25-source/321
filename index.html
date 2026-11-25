@@ -198,7 +198,7 @@
               <br/>
 <span style="color:#c5838c">
                 hechos helado.
-                              </span>
+              </span>
 </h2>
 <p class="section-sub">
               Prueba nuestro lado más tradicional: api, arroz con leche y papaliza. Descubre también açaí, chantillí y otros sabores. Los precios y sabores son referenciales y deben confirmarse al realizar el pedido.
@@ -598,3 +598,371 @@
             Mi pedido
           </h2>
 <p>
+            Arma tu pedido a tu manera
+          </p>
+</div>
+<button aria-label="Cerrar carrito" class="icon-btn order-close" id="closeCart" type="button">
+          ✕
+        </button>
+</div>
+<div class="drawer-body">
+<div class="order-status">
+<span aria-hidden="true">
+            ✓
+          </span>
+          Revisa tus productos y personaliza la entrega
+        </div>
+<div aria-live="polite" class="cart-items" id="cartItems">
+</div>
+<form class="order-form" id="orderForm">
+<div class="order-step">
+<div class="order-step-heading">
+<span class="order-step-number">
+                1
+              </span>
+<div>
+<h3>
+                  ¿Cómo quieres recibirlo?
+                </h3>
+<p>
+                  Elige la opción más cómoda para ti.
+                </p>
+</div>
+</div>
+<div aria-label="Modalidad del pedido" class="delivery-toggle" role="radiogroup">
+<label class="delivery-choice selected">
+<input checked="" name="orderMode" type="radio" value="recoger"/>
+<span class="delivery-choice-icon">
+                  🏪
+                </span>
+<span>
+<b>
+                    Recoger
+                  </b>
+<small>
+                    En nuestra tienda
+                  </small>
+</span>
+</label>
+<label class="delivery-choice">
+<input name="orderMode" type="radio" value="domicilio"/>
+<span class="delivery-choice-icon">
+                  🛵
+                </span>
+<span>
+<b>
+                    A domicilio
+                  </b>
+<small>
+                    Con ubicación exacta
+                  </small>
+</span>
+</label>
+</div>
+<select aria-hidden="true" hidden="" id="orderType" name="entrega" tabindex="-1">
+<option value="recoger">
+                Recoger en tienda
+              </option>
+<option value="domicilio">
+                Entrega a domicilio
+              </option>
+</select>
+<div class="pickup-fields" id="pickupFields">
+<div class="order-fields-two">
+<div class="field">
+<label for="pickupDate">
+                    Día de retiro
+                    <span class="required">
+                      *
+                    </span>
+</label>
+<input id="pickupDate" name="pickupDate" required="" type="date"/>
+</div>
+<div class="field">
+<label for="pickupTime">
+                    Horario preferido
+                    <span class="required">
+                      *
+                    </span>
+</label>
+<select id="pickupTime" name="pickupTime" required="">
+<option value="">
+                      Elige un horario
+                    </option>
+</select>
+</div>
+</div>
+<p class="order-help">
+                🕒 El horario es una solicitud y se confirmará por WhatsApp. El horario se confirmará por WhatsApp.
+              </p>
+</div>
+<div class="delivery-fields" hidden="" id="deliveryFields">
+<div class="field">
+<label for="orderAddress">
+                  Dirección de entrega
+                  <span class="required">
+                    *
+                  </span>
+</label>
+<input autocomplete="street-address" id="orderAddress" maxlength="180" name="direccion" placeholder="Calle, número, zona o barrio" type="text"/>
+</div>
+<div class="field">
+<label for="orderReference">
+                  Referencia para llegar (opcional)
+                </label>
+<input id="orderReference" maxlength="150" name="referencia" placeholder="Ej. Puerta azul, junto a una farmacia" type="text"/>
+</div>
+<div class="order-map-heading">
+<b>
+                  📍 Marca tu ubicación exacta
+                </b>
+<small>
+                  Toca el mapa o arrastra el marcador
+                </small>
+</div>
+<div aria-label="Mapa interactivo para marcar la dirección de entrega" class="delivery-map" id="deliveryMap" role="application">
+</div>
+<div class="map-fallback" hidden="" id="mapFallback">
+<strong>
+                  El mapa no pudo cargarse.
+                </strong>
+<span>
+                  Comprueba tu conexión o escribe las coordenadas de la entrega.
+                </span>
+<button class="map-outline-btn" id="retryMapBtn" type="button">
+                  Reintentar mapa
+                </button>
+</div>
+<div class="map-actions">
+<button class="map-outline-btn" id="useMyLocation" type="button">
+                  ⌖ Usar mi ubicación
+                </button>
+<button class="map-outline-btn" id="clearDeliveryPin" type="button">
+                  ✕ Quitar marcador
+                </button>
+</div>
+<div aria-live="polite" class="map-picked" id="mapPicked" role="status">
+                Todavía no marcaste el punto de entrega.
+              </div>
+<a class="pin-link" hidden="" id="deliveryPinLink" rel="noopener noreferrer" target="_blank">
+                Ver punto en Google Maps ↗
+              </a>
+<details class="coords-details">
+<summary>
+                  ¿No puedes marcar en el mapa? Escribe coordenadas
+                </summary>
+<div class="order-fields-two">
+<div class="field">
+<label for="deliveryLat">
+                      Latitud
+                    </label>
+<input id="deliveryLat" inputmode="decimal" max="90" min="-90" placeholder="Ej. -17.39" step="any" type="number"/>
+</div>
+<div class="field">
+<label for="deliveryLng">
+                      Longitud
+                    </label>
+<input id="deliveryLng" inputmode="decimal" max="180" min="-180" placeholder="Ej. -66.15" step="any" type="number"/>
+</div>
+</div>
+<button class="map-outline-btn" id="applyCoordinates" type="button">
+                  Ubicar estas coordenadas
+                </button>
+</details>
+<p class="order-help">
+                Tu ubicación se añadirá como enlace de Google Maps únicamente al preparar tu pedido en WhatsApp. El costo de envío se confirma aparte.
+              </p>
+</div>
+</div>
+<div class="order-step">
+<div class="order-step-heading">
+<span class="order-step-number">
+                2
+              </span>
+<div>
+<h3>
+                  Tus datos
+                </h3>
+<p>
+                  Para comunicarnos sobre el pedido.
+                </p>
+</div>
+</div>
+<div class="field">
+<label for="orderName">
+                Nombre del cliente
+                <span class="required">
+                  *
+                </span>
+</label>
+<input autocomplete="name" id="orderName" maxlength="80" name="nombre" placeholder="Ej. María Fernández" required="" type="text"/>
+</div>
+<div class="field">
+<label for="orderPhone">
+                Teléfono de contacto
+                <span class="required">
+                  *
+                </span>
+</label>
+<input autocomplete="tel" id="orderPhone" inputmode="tel" maxlength="25" minlength="7" name="telefono" placeholder="Ej. 70000000" required="" type="tel"/>
+</div>
+</div>
+<div class="order-step">
+<div class="order-step-heading">
+<span class="order-step-number">
+                3
+              </span>
+<div>
+<h3>
+                  Un toque especial
+                </h3>
+<p>
+                  Puedes añadir hasta dos toppings gratuitos.
+                </p>
+</div>
+</div>
+<div aria-labelledby="toppingsTitle" class="toppings-panel">
+<h3 id="toppingsTitle">
+                🍫 Agrega tus toppings
+              </h3>
+<p class="form-help">
+                Puedes elegir hasta 2 tipos de toppings
+                <strong>
+                  sin costo adicional
+                </strong>
+                .
+              </p>
+<fieldset aria-describedby="toppingsHint" class="toppings-choices">
+<legend>
+                  Selecciona tus favoritos
+                </legend>
+<p class="toppings-hint" id="toppingsHint">
+                  Marca hasta 2 opciones. Puedes dejarlas sin marcar.
+                </p>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Chispas de chocolate"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🍫
+                  </span>
+<span>
+                    Chispas de chocolate
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Galleta Oreo"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🍪
+                  </span>
+<span>
+                    Galleta Oreo
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Maní triturado"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🥜
+                  </span>
+<span>
+                    Maní triturado
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Coco rallado"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🥥
+                  </span>
+<span>
+                    Coco rallado
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Granola"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🌾
+                  </span>
+<span>
+                    Granola
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Salsa de chocolate"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🍯
+                  </span>
+<span>
+                    Salsa de chocolate
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Dulce de leche"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🍮
+                  </span>
+<span>
+                    Dulce de leche
+                  </span>
+</label>
+</fieldset>
+<div class="toppings-summary">
+<span>
+                  Toppings incluidos
+                </span>
+<strong aria-live="polite" id="toppingsTotal">
+                  0 de 2 · Gratis
+                </strong>
+</div>
+</div>
+</div>
+<div class="order-step order-step-last">
+<div class="field">
+<label for="orderNotes">
+                Indicaciones del pedido (opcional)
+              </label>
+<textarea id="orderNotes" maxlength="500" name="observaciones" placeholder="Ej. Sin azúcar, instrucciones especiales..."></textarea>
+</div>
+</div>
+</form>
+</div>
+<div class="cart-footer order-bottom">
+<div class="cart-total">
+<span>
+            Total de productos
+          </span>
+<strong id="cartTotal">
+            Bs 0
+          </strong>
+</div>
+<button class="btn btn-dark" form="orderForm" id="checkoutBtn" type="submit">
+          Enviar pedido por WhatsApp ↗
+        </button>
+<small>
+          No se cobra desde la web. WhatsApp abrirá tu pedido preparado y tú confirmarás el envío.
+        </small>
+</div>
+</aside>
+<!-- ===== 07 · Acceso del propietario ===== -->
+
+<!-- Herramientas PRIVADAS para editar antes de publicar. Nunca subir este archivo de edición. -->
+
+
+<!-- El catálogo exportado se almacena aquí; [] indica catálogo inicial de demostración. -->
+<!-- ===== 09 · Datos de configuración ===== -->
+
+<script id="catalogSeedData" type="application/json">
+      []
+    </script>
+<script id="locationSeedData" type="application/json">
+      {"address":"Chiri · Ubicación exacta en el mapa, Cochabamba, Bolivia","mapQuery":"-17.393483,-66.150891","mapsUrl":"https://maps.app.goo.gl/E9eFs4iLe22wHP2E8","hours":"Horario por confirmar","confirmed":true,"pickupStart":"11:00","pickupEnd":"20:00"}
+    </script>
+<div aria-live="polite" class="toast" id="toast" role="status">
+</div>
+<!-- JavaScript público de CHIRI: catálogo, carrito y pedidos -->
+
+<!-- ===== 11 · JavaScript / exportación pública ===== -->
+
+<!-- ===== 12 · JavaScript / comentarios ===== -->
+
+
+
+<script src="assets/js/chiri.js"></script><script src="assets/js/comentarios.js"></script></body>
+</html>
