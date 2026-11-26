@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#fbf5ec" name="theme-color"/>
+<meta content="Chiri, heladería artesanal de sabores tradicionales y creativos: api, arroz con leche, papaliza, açaí y chantillí. Conoce nuestro catálogo y haz tu pedido por WhatsApp." name="description"/>
+<title>
+      Chiri | Helados artesanales con sabor a tradición
+    </title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" rel="stylesheet"/>
+<script crossorigin="anonymous" defer="" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js">
+</script>
+<link data-purpose="Bootstrap 5.3.8: grid responsivo (filas y columnas)" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap-grid.min.css" rel="stylesheet"/>
+
+<link href="assets/css/chiri.css" rel="stylesheet"/></head>
+<body>
+
+<header>
+<div class="container nav">
+<a aria-label="Ir al inicio" class="brand" href="#inicio">
+<span class="brand-mark"><img alt="Logotipo CHIRI" height="48" src="assets/imagenes/logo.png" width="48"/></span>
+<span>
+            CHIRI
+            <small>
+              HELADERÍA ARTESANAL
+            </small>
+</span>
+</a>
+<nav aria-label="Navegación principal" class="nav-links" id="navLinks">
+<a class="active" href="#inicio">
+            Inicio
+          </a>
+<a href="#promociones">
+            Promociones
+          </a>
+<a href="#catalogo">
+            Catálogo
+          </a>
+<a href="#nosotros">
+            Nosotros
+          </a>
+<a href="#comentarios">
+            Comentarios
+          </a>
+<a href="#contactos">
+            Contactos
+          </a>
+</nav>
+<div class="nav-actions">
+
+<button aria-label="Abrir carrito" class="icon-btn cart-trigger" id="cartBtn" title="Mi pedido">
+<svg class="icon" viewbox="0 0 24 24">
+<path d="M3 4h2l2.5 11.5h11L21 7H6">
+</path>
+<circle cx="10" cy="20" r="1">
+</circle>
+<circle cx="18" cy="20" r="1">
+</circle>
+</svg>
+<span class="count" id="cartCount">
+              0
+            </span>
+</button>
+<button aria-expanded="false" aria-label="Mostrar menú" class="icon-btn mobile-toggle" id="menuBtn">
+<svg class="icon" viewbox="0 0 24 24">
+<path d="M4 7h16M4 12h16M4 17h16">
+</path>
+</svg>
+</button>
+</div>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+<div class="hero-bg"><img alt="Portada de CHIRI con helados artesanales" fetchpriority="high" src="assets/imagenes/portada.jpg"/></div>
+<div class="container hero-content">
+<div class="hero-copy">
+<h1>
+<span class="hero-line">
+                Nuestra tradición
+              </span>
+<em class="hero-line">
+                también es helado.
+              </em>
+</h1>
+<p>
+              En Chiri convertimos sabores como el api, el arroz con leche y la papaliza en helados artesanales para disfrutar nuestras raíces de otra manera.
+            </p>
+<a class="btn" href="#catalogo">
+              Pedir ahora
+              <span aria-hidden="true">
+                ↗
+              </span>
+</a>
+</div>
+</div>
+<div class="scroll-note">
+          DESCUBRE MÁS ↓
+        </div>
+</section>
+<div class="features">
+<div class="container features-grid row g-3">
+<div class="feature col-12 col-md-4">
+<span class="emoji">
+              🍓
+            </span>
+<div>
+<strong>
+                Sabores de Bolivia
+              </strong>
+<small>
+                Api, arroz con leche y papaliza en versión helado
+              </small>
+</div>
+</div>
+<div class="feature col-12 col-md-4">
+<span class="emoji">
+              🥛
+            </span>
+<div>
+<strong>
+                Toque artesanal
+              </strong>
+<small>
+                Propuestas diferentes, inspiradas en nuestras recetas
+              </small>
+</div>
+</div>
+<div class="feature col-12 col-md-4">
+<span class="emoji">
+              💚
+            </span>
+<div>
+<strong>
+                Una experiencia distinta
+              </strong>
+<small>
+                Tradición y creatividad en cada porción
+              </small>
+</div>
+</div>
+</div>
+</div>
+
+<section class="promo-section" id="promociones">
+<div class="container">
+<div class="section-head">
+<div>
+<h2 class="section-title">
+                La tradición
+                <br/>
+                en una promo.
+              </h2>
+</div>
+</div>
+<div class="promo-grid" id="promoGrid">
+<article class="promo-card promo-featured" style="background:#eac4b8">
+<div class="promo-top">
+<span class="offer">
+                  PROMOCIÓN DE EJEMPLO
+                </span>
+<h3>
+                  Tradición Chiri
+                </h3>
+<p>
+                  Un helado de api y otro de arroz con leche, para compartir un sabor muy nuestro.
+                </p>
+<div class="promo-price">
+                  Bs 28
+                  <small>
+                    precio promocional
+                  </small>
+</div>
+<button data-add="promo-duo" type="button">
+                  Agregar a mi pedido ↗
+                </button>
+</div>
+<div class="promo-visual">
+<img alt="Promoción Tradición Chiri (fotografía referencial)" loading="lazy" src="assets/imagenes/promocion.jpg"/>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="catalog-section" id="catalogo">
+<div class="container">
+<div class="catalog-head">
+<h2 class="section-title">
+              Sabores de aquí,
+              <br/>
+<span style="color:#c5838c">
+                hechos helado.
+              </span>
+</h2>
+<p class="section-sub">
+              Prueba nuestro lado más tradicional: api, arroz con leche y papaliza. Descubre también açaí, chantillí y otros sabores. Los precios y sabores son referenciales y deben confirmarse al realizar el pedido.
+            </p>
+</div>
+<div aria-label="Filtrar catálogo" class="filters" role="group">
+<button aria-pressed="true" class="filter active" data-filter="todos">
+              Todos
+            </button>
+<button aria-pressed="false" class="filter" data-filter="cremosos">
+              Cremosos
+            </button>
+<button aria-pressed="false" class="filter" data-filter="frutales">
+              Frutales
+            </button>
+<button aria-pressed="false" class="filter" data-filter="especiales">
+              Especiales
+            </button>
+</div>
+<div class="catalog-controls">
+<p aria-live="polite" id="resultCount">
+              9 sabores disponibles
+            </p>
+<label class="search-box">
+              ⌕
+              <input aria-label="Buscar sabor" id="searchInput" placeholder="Busca tu sabor favorito" type="search"/>
+</label>
+</div>
+<div class="products" id="products">
+</div>
+</div>
+</section>
+
+<section class="about-section" id="nosotros">
+<div class="container about-grid">
+<div class="about-visual">
+<img alt="Helados artesanales de varios sabores" loading="lazy" src="assets/imagenes/nosotros.jpg"/>
+<div class="about-stamp">
+<span>
+                ♥
+              </span>
+              Hecho
+              <br/>
+              con cariño
+            </div>
+</div>
+<div class="about-copy">
+<h2 class="section-title">
+              Helados con historia.
+              <br/>
+<span style="color:#c5838c">
+                Sabores con raíces.
+              </span>
+</h2>
+<p class="section-sub">
+              Chiri es una propuesta de heladería artesanal que da un giro refrescante a sabores conocidos y queridos de nuestra cultura.
+            </p>
+<p>
+              Aquí el api, el arroz con leche y la papaliza se convierten en helados fuera de lo común. También exploramos sabores como el açaí (asaí) y la chantillí para quienes quieren probar algo nuevo. Nuestra idea es sencilla: disfrutar lo tradicional de una forma diferente.
+            </p>
+<div class="about-highlights">
+<div class="highlight">
+<strong>
+                  Chiri
+                </strong>
+<small>
+                  Tradición con un toque nuevo
+                </small>
+</div>
+<div class="divider-v">
+</div>
+<div class="highlight">
+<strong>
+                  5
+                </strong>
+<small>
+                  Sabores protagonistas
+                </small>
+</div>
+</div>
+<a class="btn btn-dark" href="#catalogo">
+              Descubre los sabores de Chiri ↗
+            </a>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="commentsTitle" class="comments-section" id="comentarios">
+<div class="container">
+<div class="comments-head">
+<div>
+<h2 class="section-title" id="commentsTitle">
+                Cada sabor tiene
+                <br/>
+<span class="comments-pink">
+                  una historia.
+                </span>
+</h2>
+<p class="section-sub">
+                ¿Ya probaste nuestros helados? Cuéntanos qué te pareció, qué sabor fue tu favorito o cuál te gustaría descubrir.
+              </p>
+</div>
+<div aria-hidden="true" class="comments-decoration">
+<span>
+                “
+              </span>
+<strong>
+                ¡Nos encanta
+                <br/>
+                leerte!
+              </strong>
+<small>
+                Chiri · Heladería artesanal
+              </small>
+</div>
+</div>
+<div class="comments-layout">
+<div class="comments-board">
+<div class="comments-board-header">
+<div>
+<h3>
+                    Lo que nos cuentan
+                  </h3>
+</div>
+<span class="comments-counter" id="commentsCount">
+                  0 comentarios
+                </span>
+</div>
+<div aria-live="polite" class="comments-list" id="commentsList">
+<div class="comments-empty">
+<strong>
+                    Este espacio es para ti
+                  </strong>
+<p>
+                    Sé la primera persona en compartir su experiencia con Chiri.
+                  </p>
+</div>
+</div>
+</div>
+<form class="comments-form" id="commentsForm">
+<h3>
+                Déjanos tu comentario
+                <span aria-hidden="true">
+                  💗
+                </span>
+</h3>
+<p>
+                Queremos conocer tu opinión.
+              </p>
+<div class="field">
+<label for="reviewName">
+                  Tu nombre
+                </label>
+<input autocomplete="name" id="reviewName" maxlength="50" name="nombre" placeholder="¿Cómo te llamas?" required="" type="text"/>
+</div>
+<div class="field">
+<label for="reviewRating">
+                  ¿Cuánto te gustó Chiri?
+                </label>
+<select id="reviewRating" name="valoracion" required="">
+<option value="5">
+                    ★★★★★ · Me encantó
+                  </option>
+<option value="4">
+                    ★★★★☆ · Muy bueno
+                  </option>
+<option value="3">
+                    ★★★☆☆ · Bueno
+                  </option>
+<option value="2">
+                    ★★☆☆☆ · Puede mejorar
+                  </option>
+<option value="1">
+                    ★☆☆☆☆ · No fue lo esperado
+                  </option>
+</select>
+</div>
+<div class="field">
+<label for="reviewMessage">
+                  Tu comentario
+                </label>
+<textarea id="reviewMessage" maxlength="450" name="comentario" placeholder="Mi sabor favorito fue…" required="" rows="5"></textarea>
+</div>
+<button class="btn btn-dark comments-submit" type="submit">
+                Publicar mi comentario ↗
+              </button>
+<p class="comments-notice">
+<span aria-hidden="true">
+                  ⓘ
+                </span>
+                Por ahora, los comentarios se guardan solo en este navegador. No serán visibles para otros clientes hasta conectar una base de datos.
+              </p>
+<p aria-live="polite" class="comments-feedback" id="commentsFeedback" role="status">
+</p>
+</form>
+</div>
+</div>
+</section>
+
+<section class="contact-section" id="contactos">
+<div class="container">
+<div class="contact-grid row gy-4 gx-lg-5">
+<div class="col-12 col-lg-5">
+<h2 class="section-title">
+                ¿Quieres probar
+                <br/>
+                algo diferente?
+              </h2>
+<p class="section-sub">
+                En Chiri te ayudamos a elegir un sabor, resolver dudas o preparar tu pedido. ¡Escríbenos!
+              </p>
+<div class="contact-points">
+<div class="contact-point">
+<div class="contact-icon">
+                    📍
+                  </div>
+<div>
+<b>
+                      Visítanos
+                    </b>
+<span id="businessAddressText">
+                      Chiri · Ubicación exacta en el mapa, Cochabamba, Bolivia
+                    </span>
+</div>
+</div>
+<div class="contact-point">
+<div class="contact-icon">
+                    🕒
+                  </div>
+<div>
+<b>
+                      Horario de atención
+                    </b>
+<span id="businessHoursText">
+                      Horario por confirmar
+                    </span>
+</div>
+</div>
+<div class="contact-point">
+<div class="contact-icon">
+                    📱
+                  </div>
+<div>
+<b>
+                      WhatsApp
+                    </b>
+<span>
+<a aria-label="Escribir al WhatsApp 67424605" href="https://wa.me/59167424605" rel="noopener noreferrer" target="_blank">
+                        67424605
+                      </a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<form class="contact-form col-12 col-lg-7" id="contactForm">
+<h3>
+                Escríbenos a Chiri 💌
+              </h3>
+<div class="field">
+<label for="contactName">
+                  Tu nombre
+                </label>
+<input id="contactName" name="nombre" placeholder="¿Cómo te llamas?" required=""/>
+</div>
+<div class="field">
+<label for="contactEmail">
+                  Correo electrónico
+                </label>
+<input id="contactEmail" name="correo" placeholder="tunombre@correo.com" required="" type="email"/>
+</div>
+<div class="field">
+<label for="contactMessage">
+                  Tu mensaje
+                </label>
+<textarea id="contactMessage" name="mensaje" placeholder="¿Qué sabor te gustaría probar o qué deseas consultar?" required=""></textarea>
+</div>
+<button class="btn btn-dark" type="submit">
+                Preparar mensaje ↗
+              </button>
+<p style="font-size:12px;color:#8a9288;margin-bottom:0">
+                Se abrirá tu aplicación de correo con el mensaje preparado.
+              </p>
+</form>
+</div>
+<div aria-labelledby="mapTitle" class="location-block">
+<div class="location-heading">
+<div>
+<h3 id="mapTitle">
+                  Encuentra a Chiri en Google Maps
+                </h3>
+<p id="mapNote">
+                  ¡Ya tenemos nuestra ubicación! Encuentra el punto exacto de Chiri en Google Maps y visítanos.
+                </p>
+</div>
+<a class="btn btn-outline btn-small" href="https://maps.app.goo.gl/E9eFs4iLe22wHP2E8" id="mapLink" rel="noopener noreferrer" target="_blank">
+                Cómo llegar con Google Maps ↗
+              </a>
+</div>
+<div class="map-frame-wrap">
+<iframe allowfullscreen="" id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-17.393483%2C-66.150891&amp;z=17&amp;output=embed" title="Ubicación exacta de Chiri en Cochabamba">
+</iframe>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-top row gy-4 gx-4">
+<div class="col-12 col-md-6 col-lg-6">
+<div class="footer-brand">
+              🍦 Chiri
+            </div>
+<p>
+              Sabores que nacen de nuestras tradiciones: api, arroz con leche, papaliza, açaí y muchas ganas de compartir algo diferente.
+            </p>
+</div>
+<div class="col-6 col-md-3 col-lg-3">
+<h4>
+              Explora
+            </h4>
+<div class="footer-links">
+<a href="#inicio">
+                Inicio
+              </a>
+<a href="#promociones">
+                Promociones
+              </a>
+<a href="#catalogo">
+                Catálogo
+              </a>
+<a href="#nosotros">
+                Nosotros
+              </a>
+<a href="#comentarios">
+                Comentarios
+              </a>
+</div>
+</div>
+<div class="col-6 col-md-3 col-lg-3">
+<h4>
+              Contáctanos
+            </h4>
+<div class="footer-links">
+<a href="#contactos">
+                Ubicación y horarios
+              </a>
+<a href="#contactos">
+                Envíanos un mensaje
+              </a>
+<a href="#catalogo">
+                Haz tu pedido
+              </a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>
+            ©
+            <span id="year">
+</span>
+            Chiri. Todos los derechos reservados.
+          </span>
+<span>
+            Tradición boliviana hecha helado
+          </span>
+</div>
+</div>
+</footer>
+
+<a aria-label="Hablar por WhatsApp con Chiri al 67424605" class="whatsapp-float" href="https://wa.me/59167424605" rel="noopener noreferrer" target="_blank" title="Hablar por WhatsApp">
+<span class="whatsapp-label">
+        ¿Te ayudamos? Escríbenos
+      </span>
+<span aria-hidden="true" class="whatsapp-circle">
+<svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.02 3.2C9.01 3.2 3.31 8.86 3.3 15.85a12.5 12.5 0 0 0 1.7 6.32L3.2 28.8l6.82-1.79a12.76 12.76 0 0 0 6 1.53h.01c7.01 0 12.72-5.67 12.73-12.64A12.57 12.57 0 0 0 25 6.96a12.6 12.6 0 0 0-8.98-3.76Zm0 23.19a10.59 10.59 0 0 1-5.41-1.47l-.39-.24-4.04 1.06 1.08-3.93-.26-.41a10.46 10.46 0 0 1-1.61-5.55c0-5.8 4.76-10.51 10.63-10.51a10.53 10.53 0 0 1 7.5 3.11 10.43 10.43 0 0 1 3.1 7.44 10.55 10.55 0 0 1-10.6 10.52Zm5.82-7.88c-.32-.15-1.88-.92-2.17-1.02-.3-.1-.5-.15-.71.16-.21.32-.82 1.02-1 1.23-.19.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.57-1.88-1.76-2.2-.18-.32-.02-.49.14-.65.15-.14.32-.37.48-.56.16-.18.21-.32.31-.53.11-.21.05-.4-.02-.56-.08-.16-.72-1.72-.99-2.35-.26-.62-.52-.53-.71-.54l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.1 1.07-1.1 2.61s1.13 3.04 1.28 3.25c.16.21 2.22 3.38 5.38 4.73.75.32 1.34.51 1.8.65.76.24 1.46.21 2.01.13.61-.09 1.88-.77 2.14-1.51.27-.74.27-1.37.19-1.51-.08-.13-.29-.21-.61-.37Z">
+</path>
+</svg>
+</span>
+</a>
+
+<div class="overlay" id="overlay">
+</div>
+
+<aside aria-hidden="true" aria-labelledby="cartTitle" aria-modal="true" class="drawer" id="drawer" role="dialog">
+<div class="drawer-header order-head">
+<div aria-hidden="true" class="order-brand-mark">
+          🍦
+        </div>
+<div class="order-brand-copy">
+<h2 id="cartTitle">
+            Mi pedido
+          </h2>
+<p>
+            Arma tu pedido a tu manera
+          </p>
+</div>
+<button aria-label="Cerrar carrito" class="icon-btn order-close" id="closeCart" type="button">
+          ✕
+        </button>
+</div>
+<div class="drawer-body">
+<div class="order-status">
+<span aria-hidden="true">
+            ✓
+          </span>
+          Revisa tus productos y personaliza la entrega
+        </div>
+<div aria-live="polite" class="cart-items" id="cartItems">
+</div>
+<form class="order-form" id="orderForm">
+<div class="order-step">
+<div class="order-step-heading">
+<span class="order-step-number">
+                1
+              </span>
+<div>
+<h3>
+                  ¿Cómo quieres recibirlo?
+                </h3>
+<p>
+                  Elige la opción más cómoda para ti.
+                </p>
+</div>
+</div>
+<div aria-label="Modalidad del pedido" class="delivery-toggle" role="radiogroup">
+<label class="delivery-choice selected">
+<input checked="" name="orderMode" type="radio" value="recoger"/>
+<span class="delivery-choice-icon">
+                  🏪
+                </span>
+<span>
+<b>
+                    Recoger
+                  </b>
+<small>
+                    En nuestra tienda
+                  </small>
+</span>
+</label>
+<label class="delivery-choice">
+<input name="orderMode" type="radio" value="domicilio"/>
+<span class="delivery-choice-icon">
+                  🛵
+                </span>
+<span>
+<b>
+                    A domicilio
+                  </b>
+<small>
+                    Con ubicación exacta
+                  </small>
+</span>
+</label>
+</div>
+<select aria-hidden="true" hidden="" id="orderType" name="entrega" tabindex="-1">
+<option value="recoger">
+                Recoger en tienda
+              </option>
+<option value="domicilio">
+                Entrega a domicilio
+              </option>
+</select>
+<div class="pickup-fields" id="pickupFields">
+<div class="order-fields-two">
+<div class="field">
+<label for="pickupDate">
+                    Día de retiro
+                    <span class="required">
+                      *
+                    </span>
+</label>
+<input id="pickupDate" name="pickupDate" required="" type="date"/>
+</div>
+<div class="field">
+<label for="pickupTime">
+                    Horario preferido
+                    <span class="required">
+                      *
+                    </span>
+</label>
+<select id="pickupTime" name="pickupTime" required="">
+<option value="">
+                      Elige un horario
+                    </option>
+</select>
+</div>
+</div>
+<p class="order-help">
+                🕒 El horario es una solicitud y se confirmará por WhatsApp. El horario se confirmará por WhatsApp.
+              </p>
+</div>
+<div class="delivery-fields" hidden="" id="deliveryFields">
+<div class="field">
+<label for="orderAddress">
+                  Dirección de entrega
+                  <span class="required">
+                    *
+                  </span>
+</label>
+<input autocomplete="street-address" id="orderAddress" maxlength="180" name="direccion" placeholder="Calle, número, zona o barrio" type="text"/>
+</div>
+<div class="field">
+<label for="orderReference">
+                  Referencia para llegar (opcional)
+                </label>
+<input id="orderReference" maxlength="150" name="referencia" placeholder="Ej. Puerta azul, junto a una farmacia" type="text"/>
+</div>
+<div class="order-map-heading">
+<b>
+                  📍 Marca tu ubicación exacta
+                </b>
+<small>
+                  Toca el mapa o arrastra el marcador
+                </small>
+</div>
+<div aria-label="Mapa interactivo para marcar la dirección de entrega" class="delivery-map" id="deliveryMap" role="application">
+</div>
+<div class="map-fallback" hidden="" id="mapFallback">
+<strong>
+                  El mapa no pudo cargarse.
+                </strong>
+<span>
+                  Comprueba tu conexión o escribe las coordenadas de la entrega.
+                </span>
+<button class="map-outline-btn" id="retryMapBtn" type="button">
+                  Reintentar mapa
+                </button>
+</div>
+<div class="map-actions">
+<button class="map-outline-btn" id="useMyLocation" type="button">
+                  ⌖ Usar mi ubicación
+                </button>
+<button class="map-outline-btn" id="clearDeliveryPin" type="button">
+                  ✕ Quitar marcador
+                </button>
+</div>
+<div aria-live="polite" class="map-picked" id="mapPicked" role="status">
+                Todavía no marcaste el punto de entrega.
+              </div>
+<a class="pin-link" hidden="" id="deliveryPinLink" rel="noopener noreferrer" target="_blank">
+                Ver punto en Google Maps ↗
+              </a>
+<details class="coords-details">
+<summary>
+                  ¿No puedes marcar en el mapa? Escribe coordenadas
+                </summary>
+<div class="order-fields-two">
+<div class="field">
+<label for="deliveryLat">
+                      Latitud
+                    </label>
+<input id="deliveryLat" inputmode="decimal" max="90" min="-90" placeholder="Ej. -17.39" step="any" type="number"/>
+</div>
+<div class="field">
+<label for="deliveryLng">
+                      Longitud
+                    </label>
+<input id="deliveryLng" inputmode="decimal" max="180" min="-180" placeholder="Ej. -66.15" step="any" type="number"/>
+</div>
+</div>
+<button class="map-outline-btn" id="applyCoordinates" type="button">
+                  Ubicar estas coordenadas
+                </button>
+</details>
+<p class="order-help">
+                Tu ubicación se añadirá como enlace de Google Maps únicamente al preparar tu pedido en WhatsApp. El costo de envío se confirma aparte.
+              </p>
+</div>
+</div>
+<div class="order-step">
+<div class="order-step-heading">
+<span class="order-step-number">
+                2
+              </span>
+<div>
+<h3>
+                  Tus datos
+                </h3>
+<p>
+                  Para comunicarnos sobre el pedido.
+                </p>
+</div>
+</div>
+<div class="field">
+<label for="orderName">
+                Nombre del cliente
+                <span class="required">
+                  *
+                </span>
+</label>
+<input autocomplete="name" id="orderName" maxlength="80" name="nombre" placeholder="Ej. María Fernández" required="" type="text"/>
+</div>
+<div class="field">
+<label for="orderPhone">
+                Teléfono de contacto
+                <span class="required">
+                  *
+                </span>
+</label>
+<input autocomplete="tel" id="orderPhone" inputmode="tel" maxlength="25" minlength="7" name="telefono" placeholder="Ej. 70000000" required="" type="tel"/>
+</div>
+</div>
+<div class="order-step">
+<div class="order-step-heading">
+<span class="order-step-number">
+                3
+              </span>
+<div>
+<h3>
+                  Un toque especial
+                </h3>
+<p>
+                  Puedes añadir hasta dos toppings gratuitos.
+                </p>
+</div>
+</div>
+<div aria-labelledby="toppingsTitle" class="toppings-panel">
+<h3 id="toppingsTitle">
+                🍫 Agrega tus toppings
+              </h3>
+<p class="form-help">
+                Puedes elegir hasta 2 tipos de toppings
+                <strong>
+                  sin costo adicional
+                </strong>
+                .
+              </p>
+<fieldset aria-describedby="toppingsHint" class="toppings-choices">
+<legend>
+                  Selecciona tus favoritos
+                </legend>
+<p class="toppings-hint" id="toppingsHint">
+                  Marca hasta 2 opciones. Puedes dejarlas sin marcar.
+                </p>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Chispas de chocolate"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🍫
+                  </span>
+<span>
+                    Chispas de chocolate
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Galleta Oreo"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🍪
+                  </span>
+<span>
+                    Galleta Oreo
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Maní triturado"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🥜
+                  </span>
+<span>
+                    Maní triturado
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Coco rallado"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🥥
+                  </span>
+<span>
+                    Coco rallado
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Granola"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🌾
+                  </span>
+<span>
+                    Granola
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Salsa de chocolate"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🍯
+                  </span>
+<span>
+                    Salsa de chocolate
+                  </span>
+</label>
+<label class="topping-option">
+<input name="toppings" type="checkbox" value="Dulce de leche"/>
+<span aria-hidden="true" class="topping-emoji">
+                    🍮
+                  </span>
+<span>
+                    Dulce de leche
+                  </span>
+</label>
+</fieldset>
+<div class="toppings-summary">
+<span>
+                  Toppings incluidos
+                </span>
+<strong aria-live="polite" id="toppingsTotal">
+                  0 de 2 · Gratis
+                </strong>
+</div>
+</div>
+</div>
+<div class="order-step order-step-last">
+<div class="field">
+<label for="orderNotes">
+                Indicaciones del pedido (opcional)
+              </label>
+<textarea id="orderNotes" maxlength="500" name="observaciones" placeholder="Ej. Sin azúcar, instrucciones especiales..."></textarea>
+</div>
+</div>
+</form>
+</div>
+<div class="cart-footer order-bottom">
+<div class="cart-total">
+<span>
+            Total de productos
+          </span>
+<strong id="cartTotal">
+            Bs 0
+          </strong>
+</div>
+<button class="btn btn-dark" form="orderForm" id="checkoutBtn" type="submit">
+          Enviar pedido por WhatsApp ↗
+        </button>
+<small>
+          No se cobra desde la web. WhatsApp abrirá tu pedido preparado y tú confirmarás el envío.
+        </small>
+</div>
+</aside>
+
+
+<script id="catalogSeedData" type="application/json">
+      []
+    </script>
+<script id="locationSeedData" type="application/json">
+      {"address":"Chiri · Ubicación exacta en el mapa, Cochabamba, Bolivia","mapQuery":"-17.393483,-66.150891","mapsUrl":"https://maps.app.goo.gl/E9eFs4iLe22wHP2E8","hours":"Horario por confirmar","confirmed":true,"pickupStart":"11:00","pickupEnd":"20:00"}
+    </script>
+<div aria-live="polite" class="toast" id="toast" role="status">
+</div>
+
+
+<script src="assets/js/chiri.js"></script><script src="assets/js/comentarios.js"></script></body>
+</html>
